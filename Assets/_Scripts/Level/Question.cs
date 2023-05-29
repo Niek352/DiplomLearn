@@ -12,7 +12,7 @@ namespace _Scripts.Level
 	{
 		public string QuestionId;
 		public string Url;
-		[TextArea(10, 40)]
+		[TextArea(10, 100)]
 		public string Text;
 		public Sprite[] Ico;
 		[InlineEditor] public AbstractAnswer Answer;
@@ -31,11 +31,17 @@ namespace _Scripts.Level
 		public void CreateAnswer()
 		{
 			var asset = CreateInstance(AnswerType);
-			
-			AssetDatabase.CreateAsset(asset, $"{AssetDatabase.GetAssetPath(this).Replace(name+".asset", "")}/{AnswerType}.asset");
+			var path = AssetDatabase.GenerateUniqueAssetPath($"{AssetDatabase.GetAssetPath(this).Replace(name+".asset", "")}/{AnswerType}.asset");
+			AssetDatabase.CreateAsset(asset, path);
 			AssetDatabase.SaveAssets();
 			Answer = (AbstractAnswer)asset;
 			AssetDatabase.SaveAssets();
+		}
+		
+		[Button]
+		public void OpenURL()
+		{
+			Application.OpenURL(Url);
 		}
 	}
 

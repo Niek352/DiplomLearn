@@ -7,8 +7,9 @@ namespace _Scripts.Level
 {
 	public class LevelManager : MonoBehaviour
 	{
+		[SerializeField] private LevelController _levelController;
 		[SerializeField] private LevelButton _levelButtonPrefab;
-		[SerializeField] private Level[] _levels;
+		[SerializeField, AssetList] private Level[] _levels;
 		[SerializeField] private LevelButton[] _levelButtons;
 		[SerializeField] private List<Transform> _buttonSocket;
 		
@@ -20,7 +21,7 @@ namespace _Scripts.Level
 		        var level = _levels[i];
 		        var button = Instantiate(_levelButtonPrefab, _buttonSocket[i]);
 		        _levelButtons[i] = button;
-		        button.SetUp(level, i + 1, null);
+		        button.SetUp(level, i + 1, _levelController);
 	        }
         }
 

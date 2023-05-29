@@ -2,6 +2,6 @@
 {
 	public class AnswerVariants : AbstractAnswer
 	{
-		public string[] Variants;
+		public string[] Variants = new string [4];
 	}
 }

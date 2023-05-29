@@ -9,14 +9,14 @@ namespace _Scripts.Level
 		public Button Button;
 		[ReadOnly] public int LevelNumber;
 		[ReadOnly] public Level Level;
-		private LevelPanel _levelPanel;
+		private LevelController _levelController;
 
 		public void SetUp(
 			Level level,
 			int levelNumber,
-			LevelPanel levelPanel)
+			LevelController levelController)
 		{
-			_levelPanel = levelPanel;
+			_levelController = levelController;
 			Level = level;
 			LevelNumber = levelNumber;
 		}
@@ -28,7 +28,7 @@ namespace _Scripts.Level
 
 		public void Open()
 		{
-			_levelPanel.Show(LevelNumber);
+			_levelController.StartLevel(Level);
 		}
 	}
 
