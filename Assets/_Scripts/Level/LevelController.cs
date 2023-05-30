@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using _Scripts.Answer.View;
+using _Scripts.Factories;
+using _Scripts.Level._Question;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +13,7 @@ namespace _Scripts.Level
 		[SerializeField] private QuestionView _questionViewPrefab;
 		[SerializeField] private Transform _levelViewHolder;
 		[SerializeField] private AnswerViewFactory _answerViewFactory;
+		[SerializeField] private QuestionViewFactory _questionViewFactory;
 		[SerializeField] private Image _bg;
 		private readonly Queue<Question> _questions = new Queue<Question>();
 
@@ -32,7 +35,7 @@ namespace _Scripts.Level
 		
 		public void StartQuestion(Question question)
 		{
-			_questionView = Instantiate(_questionViewPrefab, _levelViewHolder);
+			_questionView = _questionViewFactory.Create(_levelViewHolder, question);
 			var answerView = _answerViewFactory.Create(_questionView.AnswerRoot, question);
 			_answer = question.Answer.Answer;
 			_questionView.SetUp(question, answerView);

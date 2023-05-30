@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 
-namespace _Scripts.Level
+namespace _Scripts.Level._Question
 {
 	[CreateAssetMenu(menuName = "Data/" + nameof(Question), fileName = nameof(Question))]
 	public class Question : ScriptableObject

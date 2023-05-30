@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 1441850307}
   - component: {fileID: 1441850308}
   - component: {fileID: 1441850309}
+  - component: {fileID: 1441850310}
   m_Layer: 0
   m_Name: MANAGERS
   m_TagString: Untagged
@@ -636,6 +637,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d299a5a0240321446b12c3a1f32f29c8, type: 2}
   - {fileID: 11400000, guid: ac65490479f1fe64f916bc1c4c6b1060, type: 2}
   - {fileID: 11400000, guid: fb68ef74591692744bd54efb18c5cb5c, type: 2}
+  - {fileID: 11400000, guid: 4491c0ebbc2eff345be1c3246b1ddbd4, type: 2}
   _levelButtons: []
   _buttonSocket:
   - {fileID: 8866004096031360889}
@@ -682,6 +684,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputAnswerViewPrefab: {fileID: 1207519362314537587, guid: e6699f05ab618f14ba9a8b25ca663df4, type: 3}
   _answerVariantsView: {fileID: 1640542118696506591, guid: 16189a4507ea35c4887c316deeebb081, type: 3}
+--- !u!114 &1441850310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441850306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 955def0d7b4e4a9dab1ef2728c12fec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questionView: {fileID: 5534501411731995182, guid: 75aa49468e8ca6846955620f612c29cc, type: 3}
+  _tableQuestion: {fileID: 2165336181945387243, guid: 7bf447e425ed5f942aafe4a43f330cbf, type: 3}
 --- !u!1 &1444303265
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +752,7 @@ MonoBehaviour:
   _questionViewPrefab: {fileID: 5534501411731995182, guid: 75aa49468e8ca6846955620f612c29cc, type: 3}
   _levelViewHolder: {fileID: 377617395}
   _answerViewFactory: {fileID: 1441850309}
+  _questionViewFactory: {fileID: 1441850310}
   _bg: {fileID: 256003410}
   _answer: 
 --- !u!1 &1617483568

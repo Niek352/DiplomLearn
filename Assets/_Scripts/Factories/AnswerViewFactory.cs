@@ -1,7 +1,9 @@
-﻿using _Scripts.Level;
+﻿using _Scripts.Answer;
+using _Scripts.Answer.View;
+using _Scripts.Level._Question;
 using UnityEngine;
 
-namespace _Scripts.Answer.View
+namespace _Scripts.Factories
 {
 	public class AnswerViewFactory : MonoBehaviour
 	{
@@ -19,8 +21,9 @@ namespace _Scripts.Answer.View
 					ans.SetUp(answerVariants);
 					return ans;
 				default:
-					return null;
+					return Instantiate(_inputAnswerViewPrefab, transf);
 			}
 		}
 	}
+
 }
