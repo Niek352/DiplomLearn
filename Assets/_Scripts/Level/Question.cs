@@ -43,6 +43,11 @@ namespace _Scripts.Level
 		{
 			Application.OpenURL(Url);
 		}
+		
+		[Button]
+		public void FixText()
+		{
+			Text = Text.Replace("ё", "е");
+		}
 	}
-
 }

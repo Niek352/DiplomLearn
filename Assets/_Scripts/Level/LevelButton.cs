@@ -1,4 +1,6 @@
-﻿using Sirenix.OdinInspector;
+﻿using _Scripts.Sound;
+using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +11,8 @@ namespace _Scripts.Level
 		public Button Button;
 		[ReadOnly] public int LevelNumber;
 		[ReadOnly] public Level Level;
+		[SerializeField] private TextMeshProUGUI _levelNumber;
+		[SerializeField] private string _soundName;
 		private LevelController _levelController;
 
 		public void SetUp(
@@ -19,6 +23,7 @@ namespace _Scripts.Level
 			_levelController = levelController;
 			Level = level;
 			LevelNumber = levelNumber;
+			_levelNumber.text = levelNumber.ToString();
 		}
 		
 		private void Start()
@@ -28,6 +33,7 @@ namespace _Scripts.Level
 
 		public void Open()
 		{
+			SoundManager.Instance.Play(_soundName);
 			_levelController.StartLevel(Level);
 		}
 	}

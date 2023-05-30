@@ -6,6 +6,8 @@ namespace _Scripts.Answer
 	[CreateAssetMenu(menuName = "Answer/" + nameof(TableAnswer), fileName = nameof(TableAnswer))]
 	public class TableAnswer : AbstractAnswer
 	{
+		public string[] Names = new string[4];
+		
 		[TableList(DefaultMinColumnWidth = 10)] public int[,] Matrix = new int[,]
 		{
 			{0,10,0,0},
@@ -13,6 +15,7 @@ namespace _Scripts.Answer
 			{0,10,0,0},
 			{0,10,0,0},
 		};
+		
 
 		private void OnValidate()
 		{

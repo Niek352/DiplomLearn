@@ -2,6 +2,7 @@
 using _Scripts.Answer.View;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.Level
 {
@@ -10,12 +11,16 @@ namespace _Scripts.Level
 		[SerializeField] private QuestionView _questionViewPrefab;
 		[SerializeField] private Transform _levelViewHolder;
 		[SerializeField] private AnswerViewFactory _answerViewFactory;
+		[SerializeField] private Image _bg;
 		private readonly Queue<Question> _questions = new Queue<Question>();
 
 		private QuestionView _questionView;
+		
 		[SerializeField] [DisplayAsString] [GUIColor("green")] private string _answer;
+		
 		public void StartLevel(Level level)
 		{
+			_bg.enabled = true;
 			_questions.Clear();
 			foreach (var question in level.Questions)
 			{
@@ -45,6 +50,15 @@ namespace _Scripts.Level
 			{
 				StartQuestion(result);
 			}
+			else
+			{
+				EndLevel();
+			}
+		}
+		
+		private void EndLevel()
+		{
+			_bg.enabled = false;
 		}
 	}
 }
