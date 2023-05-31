@@ -638,6 +638,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac65490479f1fe64f916bc1c4c6b1060, type: 2}
   - {fileID: 11400000, guid: fb68ef74591692744bd54efb18c5cb5c, type: 2}
   - {fileID: 11400000, guid: 4491c0ebbc2eff345be1c3246b1ddbd4, type: 2}
+  - {fileID: 11400000, guid: 8fc4e3a101d7b1941a5090a2239b38bf, type: 2}
   _levelButtons: []
   _buttonSocket:
   - {fileID: 8866004096031360889}
@@ -684,6 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputAnswerViewPrefab: {fileID: 1207519362314537587, guid: e6699f05ab618f14ba9a8b25ca663df4, type: 3}
   _answerVariantsView: {fileID: 1640542118696506591, guid: 16189a4507ea35c4887c316deeebb081, type: 3}
+  _dragNDropVariants: {fileID: 7936372291619613392, guid: 3e719e1935fc2474db34de684592a9af, type: 3}
 --- !u!114 &1441850310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _questionView: {fileID: 5534501411731995182, guid: 75aa49468e8ca6846955620f612c29cc, type: 3}
   _tableQuestion: {fileID: 2165336181945387243, guid: 7bf447e425ed5f942aafe4a43f330cbf, type: 3}
+  _dragNDropView: {fileID: 5744970729861995711, guid: e30c4e3105f46e245ad4a6c5dbd9b8c9, type: 3}
 --- !u!1 &1444303265
 GameObject:
   m_ObjectHideFlags: 0

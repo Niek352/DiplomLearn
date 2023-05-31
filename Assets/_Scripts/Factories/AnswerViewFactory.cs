@@ -9,6 +9,7 @@ namespace _Scripts.Factories
 	{
 		[SerializeField] private InputAnswerView _inputAnswerViewPrefab;
 		[SerializeField] private AnswerVariantsView _answerVariantsView;
+		[SerializeField] private DragNDropAnswerView _dragNDropVariants;
 		
 		public AbstractAnswerView Create(Transform transf, Question question)
 		{
@@ -20,6 +21,10 @@ namespace _Scripts.Factories
 					var ans = Instantiate(_answerVariantsView, transf);
 					ans.SetUp(answerVariants);
 					return ans;
+				case DragNDropVariants dropVariants:
+					var dragN = Instantiate(_dragNDropVariants, transf);
+					dragN.SetUp(dropVariants);
+					return dragN;
 				default:
 					return Instantiate(_inputAnswerViewPrefab, transf);
 			}
