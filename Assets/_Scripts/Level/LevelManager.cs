@@ -12,16 +12,19 @@ namespace _Scripts.Level
 		[SerializeField, AssetList] private Level[] _levels;
 		[SerializeField] private LevelButton[] _levelButtons;
 		[SerializeField] private List<Transform> _buttonSocket;
-		
+
+		public const string COMPLETED_LEVEL_COUNT_KEY = "COMPLETED_LEVEL_COUNT";
  		private void Awake()
         {
 	        _levelButtons = new LevelButton[_levels.Length];
+	        var completedLevelCount = PlayerPrefs.GetInt(COMPLETED_LEVEL_COUNT_KEY, 0);
+	        
 	        for (var i = 0; i < _levels.Length; i++)
 	        {
 		        var level = _levels[i];
 		        var button = Instantiate(_levelButtonPrefab, _buttonSocket[i]);
 		        _levelButtons[i] = button;
-		        button.SetUp(level, i + 1, _levelController);
+		        button.SetUp(level, i + 1, _levelController, completedLevelCount >= i);
 	        }
         }
 
