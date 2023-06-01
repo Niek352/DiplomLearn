@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using _Scripts.Utils;
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -12,11 +11,12 @@ namespace _Scripts.Sound
 	{
 		[SerializeField] private Dictionary<string, AudioClip> _audioClips;
 		[SerializeField] private AudioSource _audioSourcePrefab;
-
+		[SerializeField] private AudioSource _bgMusic;
 		private ObjectPool<AudioSource> _audioPool;
 
 		protected override void AwakeSingleton()
 		{
+			DontDestroyOnLoad(gameObject);
 			_audioPool = new ObjectPool<AudioSource>(CreateFunc);
 		}
 		
