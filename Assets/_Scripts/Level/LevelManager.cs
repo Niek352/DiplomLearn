@@ -12,7 +12,13 @@ namespace _Scripts.Level
 		[SerializeField, AssetList] private Level[] _levels;
 		[SerializeField] private LevelButton[] _levelButtons;
 		[SerializeField] private List<Transform> _buttonSocket;
-
+		
+		[Button]
+		public void SetCompletedCount(int c)
+		{
+			PlayerPrefs.SetInt(COMPLETED_LEVEL_COUNT_KEY, c);
+		}
+		
 		public const string COMPLETED_LEVEL_COUNT_KEY = "COMPLETED_LEVEL_COUNT";
  		private void Awake()
         {

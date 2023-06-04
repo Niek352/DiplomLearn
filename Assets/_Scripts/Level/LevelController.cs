@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using _Scripts.Factories;
 using _Scripts.Level._Question;
 using Sirenix.OdinInspector;
@@ -62,14 +63,14 @@ namespace _Scripts.Level
 		
 		private void CheckAnswer(string obj)
 		{
-			var isCorrect = obj == _questionView.Question.Answer.Answer;
+			var isCorrect = string.Equals(obj, _questionView.Question.Answer.Answer, StringComparison.CurrentCultureIgnoreCase);
 			Debug.Log($"Your answer is {obj}, true ans is {_questionView.Question.Answer.Answer} is {isCorrect.ToString()}");
 			
 			_questionView.AnswerView.CheckAnswer -= CheckAnswer;
 			Destroy(_questionView.gameObject);
 			if (_questions.TryPeek(out var result))
 			{
-				_questionCompletePopup.Show(_currentQuestion.Url, true);
+				_questionCompletePopup.Show(_currentQuestion.Url, isCorrect);
 			}
 			else
 			{
