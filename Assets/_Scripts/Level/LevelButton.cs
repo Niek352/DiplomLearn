@@ -66,7 +66,7 @@ namespace _Scripts.Level
 				return;
 			}
 			SoundManager.Instance.Play(_soundName);
-			_levelController.StartLevel(Level);
+			_levelController.StartLevel(Level, LevelNumber);
 		}
 	}
 

@@ -17,14 +17,14 @@ namespace _Scripts.Level._Question
 		public Sprite[] Ico;
 		[InlineEditor] public AbstractAnswer Answer;
 
+#if UNITY_EDITOR
 		[ValueDropdown(nameof(GetNames), IsUniqueList = true, DropdownWidth = 250, SortDropdownItems = true)]
 		public string AnswerType;
-		
 		static string[] GetNames()
 		{
 			return new List<string>()
 				.Concat(TypeCache.GetTypesDerivedFrom<AbstractAnswer>()
-				.Select(type => type.Name)).ToArray();
+					.Select(type => type.Name)).ToArray();
 		}
 		
 		[Button]
@@ -49,5 +49,7 @@ namespace _Scripts.Level._Question
 		{
 			Text = Text.Replace("ё", "е");
 		}
+#endif
+
 	}
 }

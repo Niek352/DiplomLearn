@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using _Scripts.Answer.View;
 using _Scripts.Factories;
 using _Scripts.Level._Question;
 using Sirenix.OdinInspector;
@@ -10,19 +9,32 @@ namespace _Scripts.Level
 {
 	public class LevelController : MonoBehaviour
 	{
-		[SerializeField] private QuestionView _questionViewPrefab;
 		[SerializeField] private Transform _levelViewHolder;
 		[SerializeField] private AnswerViewFactory _answerViewFactory;
 		[SerializeField] private QuestionViewFactory _questionViewFactory;
 		[SerializeField] private Image _bg;
-		private readonly Queue<Question> _questions = new Queue<Question>();
-
-		private QuestionView _questionView;
-		
+		[SerializeField] private EndLevelPopup _levelPopup;
+		[SerializeField] private QuestionCompletePopup _questionCompletePopup;
 		[SerializeField] [DisplayAsString] [GUIColor("green")] private string _answer;
-		
-		public void StartLevel(Level level)
+
+		private readonly Queue<Question> _questions = new Queue<Question>();
+		private QuestionView _questionView;
+		private Level _currentLevel;
+		private int _levelNumber;
+		private Question _currentQuestion;
+
+		private void Awake()
 		{
+			_questionCompletePopup.SetUp(this);
+		}
+
+		public void StartLevel(Level level, int levelNumber)
+		{
+			_levelNumber = levelNumber;
+			if (_questionView)
+				Destroy(_questionView);
+			
+			_currentLevel = level;
 			_bg.enabled = true;
 			_questions.Clear();
 			foreach (var question in level.Questions)
@@ -35,11 +47,17 @@ namespace _Scripts.Level
 		
 		public void StartQuestion(Question question)
 		{
+			_currentQuestion = question;
 			_questionView = _questionViewFactory.Create(_levelViewHolder, question);
 			var answerView = _answerViewFactory.Create(_questionView.AnswerRoot, question);
 			_answer = question.Answer.Answer;
 			_questionView.SetUp(question, answerView);
 			answerView.CheckAnswer += CheckAnswer;
+		}
+		
+		public void NextQuestion()
+		{
+			StartQuestion(_questions.Dequeue());
 		}
 		
 		private void CheckAnswer(string obj)
@@ -49,9 +67,9 @@ namespace _Scripts.Level
 			
 			_questionView.AnswerView.CheckAnswer -= CheckAnswer;
 			Destroy(_questionView.gameObject);
-			if (_questions.TryDequeue(out var result))
+			if (_questions.TryPeek(out var result))
 			{
-				StartQuestion(result);
+				_questionCompletePopup.Show(_currentQuestion.Url, true);
 			}
 			else
 			{
@@ -61,7 +79,13 @@ namespace _Scripts.Level
 		
 		private void EndLevel()
 		{
-			_bg.enabled = false;
+			OnEndLevel();
+			_levelPopup.Show(true, _levelNumber.ToString());
+		}
+		
+		private void OnEndLevel()
+		{
+			PlayerPrefs.SetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, _levelNumber);
 		}
 	}
 }

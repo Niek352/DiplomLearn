@@ -21,12 +21,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  Answer: http://classic.ru/Mozart.mp3
+  Answer: http://cafe.com/fish.gif
   Variants:
-  - ru
-  - .mp3
+  - com
+  - .gif
   - /
-  - classic.
-  - Mozart
+  - fish
+  - cafe.
   - http
   - ://
