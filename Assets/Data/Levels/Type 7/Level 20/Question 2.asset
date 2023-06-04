@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65395e906ab54101865112acb7fab35d, type: 3}
   m_Name: Question 2
   m_EditorClassIdentifier: 
+  QuestionType: 6
   QuestionId: 478
   Url: https://inf-oge.sdamgia.ru/problem?id=478
   Text: "\u041D\u0430 \u043C\u0435\u0441\u0442\u0435 \u043F\u0440\u0435\u0441\u0442\u0443\u043F\u043B\u0435\u043D\u0438\u044F
@@ -32,5 +33,5 @@ MonoBehaviour:
     \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E\u0449\u0435\u043C
     IP-\u0430\u0434\u0440\u0435\u0441\u0443."
   Ico: []
-  Answer: {fileID: 0}
+  Answer: {fileID: 11400000, guid: 0da97f9907fd13e488609c512953a4ac, type: 2}
   AnswerType: DragNDropVariants

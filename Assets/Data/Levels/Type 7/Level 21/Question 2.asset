@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65395e906ab54101865112acb7fab35d, type: 3}
   m_Name: Question 2
   m_EditorClassIdentifier: 
+  QuestionType: 6
   QuestionId: 598
   Url: https://inf-oge.sdamgia.ru/problem?id=598
   Text: "\u0414\u043E\u0441\u0442\u0443\u043F \u043A \u0444\u0430\u0439\u043B\u0443

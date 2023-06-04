@@ -10,6 +10,7 @@ namespace _Scripts.Level._Question
 	[CreateAssetMenu(menuName = "Data/" + nameof(Question), fileName = nameof(Question))]
 	public class Question : ScriptableObject
 	{
+		public QuestionType QuestionType;
 		public string QuestionId;
 		public string Url;
 		[TextArea(10, 100)]
@@ -35,6 +36,7 @@ namespace _Scripts.Level._Question
 			AssetDatabase.CreateAsset(asset, path);
 			AssetDatabase.SaveAssets();
 			Answer = (AbstractAnswer)asset;
+			EditorUtility.SetDirty(Answer);
 			AssetDatabase.SaveAssets();
 		}
 		
@@ -51,5 +53,21 @@ namespace _Scripts.Level._Question
 		}
 #endif
 
+	}
+
+	public enum QuestionType
+	{
+		Type1,
+		Type2,
+		Type3,
+		Type4,
+		Type5,
+		Type6,
+		Type7,
+		Type8,
+		Type9,
+		Type10,
+		Type11,
+		Type12,
 	}
 }
