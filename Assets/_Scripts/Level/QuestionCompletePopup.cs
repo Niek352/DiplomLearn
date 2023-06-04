@@ -20,8 +20,15 @@ namespace _Scripts.Level
 			_levelController = levelController;
 			_info.onClick.AddListener(OpenInfo);
 			_nextQuestion.onClick.AddListener(NextQuestion);
+			_restart.onClick.AddListener(RestartLevel);
 		}
 		
+		private void RestartLevel()
+		{
+			_levelController.RestartLevel();
+			gameObject.SetActive(false);
+		}
+
 		private void NextQuestion()
 		{
 			_levelController.NextQuestion();
@@ -41,12 +48,14 @@ namespace _Scripts.Level
 			
 			if (isCorrect)
 			{
+				_restart.gameObject.SetActive(false);
 				_nextQuestion.gameObject.SetActive(true);
 				_completeQuest.text = "Правильно";
 			}
 			else
 			{
 				_restart.gameObject.SetActive(true);
+				_nextQuestion.gameObject.SetActive(false);
 				_completeQuest.text = "Не правильно";
 			}
 		}

@@ -29,6 +29,11 @@ namespace _Scripts.Level
 			_questionCompletePopup.SetUp(this);
 		}
 
+		public void RestartLevel()
+		{
+			StartLevel(_currentLevel, _levelNumber);
+		}
+
 		public void StartLevel(Level level, int levelNumber)
 		{
 			_levelNumber = levelNumber;
@@ -86,7 +91,10 @@ namespace _Scripts.Level
 		
 		private void OnEndLevel()
 		{
-			PlayerPrefs.SetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, _levelNumber);
+			if (PlayerPrefs.GetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, 0) < _levelNumber)
+			{
+				PlayerPrefs.SetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, _levelNumber);
+			}
 		}
 	}
 }
