@@ -12,9 +12,14 @@ namespace _Scripts.Factories
 		[SerializeField] private MiniTableQuestionView _miniTableQuestion;
 		[SerializeField] private DragNDropView _dragNDropView;
 		[SerializeField] private CodeView _codeView;
+		[SerializeField] private PhotoQuestion _photoQuestion;
 		
 		public QuestionView Create(Transform transf, Question question)
 		{
+			if (question.Ico != null)
+			{
+				return Instantiate(_photoQuestion, transf);
+			}
 			return question.Answer switch
 			{
 				TableAnswer inputAnswer => Instantiate(_tableQuestion, transf),

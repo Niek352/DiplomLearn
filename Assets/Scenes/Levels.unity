@@ -703,6 +703,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8fc4e3a101d7b1941a5090a2239b38bf, type: 2}
   - {fileID: 11400000, guid: 14c6ae1311df88240ad4e7774da71cec, type: 2}
   - {fileID: 11400000, guid: 845d6500757e3a840b7ab59c69811f1a, type: 2}
+  - {fileID: 11400000, guid: b52ffd332680bd74ebeac3b41d030baf, type: 2}
   _levelButtons: []
   _buttonSocket:
   - {fileID: 8866004096031360889}
@@ -767,6 +768,7 @@ MonoBehaviour:
   _miniTableQuestion: {fileID: 1150782598320234424, guid: 2c96a55b4aa9cac4caeac0783e0a5235, type: 3}
   _dragNDropView: {fileID: 5744970729861995711, guid: e30c4e3105f46e245ad4a6c5dbd9b8c9, type: 3}
   _codeView: {fileID: 9093214635635719834, guid: c183b9e3e1e846a4ab70ddd809dfafdb, type: 3}
+  _photoQuestion: {fileID: 4316989314276375373, guid: cdebe1e8c14c9f94a9e818804df6015b, type: 3}
 --- !u!1 &1444303265
 GameObject:
   m_ObjectHideFlags: 0
