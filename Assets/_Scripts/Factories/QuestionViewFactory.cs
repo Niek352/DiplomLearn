@@ -16,7 +16,7 @@ namespace _Scripts.Factories
 		
 		public QuestionView Create(Transform transf, Question question)
 		{
-			if (question.Ico != null)
+			if (question.Ico != null && question.Ico.Length > 0)
 			{
 				return Instantiate(_photoQuestion, transf);
 			}

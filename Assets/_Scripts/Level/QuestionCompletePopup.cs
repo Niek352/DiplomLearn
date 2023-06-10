@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace _Scripts.Level
@@ -10,6 +11,7 @@ namespace _Scripts.Level
 		[SerializeField] private TextMeshProUGUI _completeQuest;
 		[SerializeField] private Button _nextQuestion;
 		[SerializeField] private Button _restart;
+		[SerializeField] private Button _toMenu;
 		[SerializeField] private Button _info;
 		
 		private LevelController _levelController;
@@ -21,8 +23,14 @@ namespace _Scripts.Level
 			_info.onClick.AddListener(OpenInfo);
 			_nextQuestion.onClick.AddListener(NextQuestion);
 			_restart.onClick.AddListener(RestartLevel);
+			_toMenu.onClick.AddListener(ToMenu);
 		}
 		
+		private void ToMenu()
+		{
+			SceneManager.LoadScene("Scenes/Levels");
+		}
+
 		private void RestartLevel()
 		{
 			_levelController.RestartLevel();
@@ -44,6 +52,8 @@ namespace _Scripts.Level
 		{
 			gameObject.SetActive(true);
 			_info.gameObject.SetActive(true);
+			_toMenu.gameObject.SetActive(true);
+			
 			_url = url;
 			
 			if (isCorrect)
