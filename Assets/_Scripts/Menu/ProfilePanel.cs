@@ -47,6 +47,7 @@ namespace _Scripts.Menu
 		public void Show()
 		{
 			_xpCount.text = PlayerPrefs.GetInt("XP_COUNT", 0).ToString();
+			_nameInputField.text = AuthenticationService.Instance.PlayerName;
 			_target.SetActive(true);
 		}
 
