@@ -91,6 +91,8 @@ namespace _Scripts.Level
 		
 		private void OnEndLevel()
 		{
+			var xp = PlayerPrefs.GetInt("XP_COUNT",0) + 200;
+			PlayerPrefs.SetInt("XP_COUNT", xp);
 			if (PlayerPrefs.GetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, 0) < _levelNumber)
 			{
 				PlayerPrefs.SetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, _levelNumber);
