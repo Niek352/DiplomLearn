@@ -1,7 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Menu.Settings;
+using _Scripts.PlayerServices;
+using _Scripts.Sound;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Scripts.Level
 {
@@ -12,6 +16,7 @@ namespace _Scripts.Level
 		[SerializeField, AssetList] private Level[] _levels;
 		[SerializeField] private LevelButton[] _levelButtons;
 		[SerializeField] private List<Transform> _buttonSocket;
+		[SerializeField] private Button _homeButton;
 		
 		[Button]
 		public void SetCompletedCount(int c)
@@ -23,9 +28,16 @@ namespace _Scripts.Level
 
 		private void Awake()
 		{
+			_homeButton.onClick.AddListener(Menu);
 			PrepareLevels();
 		}
 		
+		private void Menu()
+		{
+			SoundManager.Instance.Play("Button");
+			GameManager.Instance.LoadScene("Menu").Forget();
+		}
+
 		private void PrepareLevels()
 		{
 			_levelButtons = new LevelButton[_levels.Length];
