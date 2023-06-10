@@ -15,12 +15,7 @@ namespace Ricimi
 
         private bool m_swapped = true;
 
-        private Image m_image;
-
-        public void Awake()
-        {
-            m_image = GetComponent<Image>();
-        }
+        [SerializeField] private Image m_image;
 
         public void SwapSprite()
         {

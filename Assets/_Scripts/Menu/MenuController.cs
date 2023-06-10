@@ -1,4 +1,5 @@
 ﻿using _Scripts.Menu.Presenters;
+using _Scripts.Menu.Settings;
 using _Scripts.Widgets;
 using UnityEngine;
 
@@ -8,9 +9,11 @@ namespace _Scripts.Menu
 	{
 		[SerializeField] private ButtonWidget _menuButtonPrefab;
 		[SerializeField] private Transform _buttonHolder;
+		[SerializeField] private SettingsPanel _settingsPanel;
 		private LoadLevelPresenter _loadLevelPresenter;
 		private AchievementPresenter _achievementPresenter;
 		private ExitPresenter _exitPresenter;
+		private SettingsPresenter _settingsPresenter;
 
 		private void Awake()
 		{
@@ -26,6 +29,10 @@ namespace _Scripts.Menu
 			var a = Instantiate(_menuButtonPrefab, _buttonHolder);
 			_achievementPresenter = new AchievementPresenter(a);
 			_achievementPresenter.Enable();
+			
+			var s = Instantiate(_menuButtonPrefab, _buttonHolder);
+			_settingsPresenter = new SettingsPresenter(s, _settingsPanel);
+			_settingsPresenter.Enable();
 			
 			var e = Instantiate(_menuButtonPrefab, _buttonHolder);
 			_exitPresenter = new ExitPresenter(e);
