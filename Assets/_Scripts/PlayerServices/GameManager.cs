@@ -26,12 +26,7 @@ namespace _Scripts.PlayerServices
 
 			await UnityServices.InitializeAsync().AsUniTask();
 			await SignInAnonymouslyAsync();
-
-			var xp = PlayerPrefs.GetInt("XP_COUNT", 0);
-			if (xp > 0)
-			{
-				await LeaderboardsService.Instance.AddPlayerScoreAsync("XP_LEADERBOARD", xp);
-			}
+			
 			LoadScene("Scenes/Menu").Forget();
 		}
 

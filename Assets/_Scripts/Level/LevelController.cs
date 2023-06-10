@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using _Scripts.Factories;
 using _Scripts.Level._Question;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
+using Unity.Services.Leaderboards;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,12 +81,13 @@ namespace _Scripts.Level
 			}
 			else
 			{
-				EndLevel();
+				EndLevel().Forget();
 			}
 		}
 		
-		private void EndLevel()
+		private async UniTaskVoid EndLevel()
 		{
+			await LeaderboardsService.Instance.AddPlayerScoreAsync("XP_LEADERBOARD", 200);
 			OnEndLevel();
 			_levelPopup.Show(true, _levelNumber.ToString());
 		}
@@ -93,6 +96,7 @@ namespace _Scripts.Level
 		{
 			var xp = PlayerPrefs.GetInt("XP_COUNT",0) + 200;
 			PlayerPrefs.SetInt("XP_COUNT", xp);
+			
 			if (PlayerPrefs.GetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, 0) < _levelNumber)
 			{
 				PlayerPrefs.SetInt(LevelManager.COMPLETED_LEVEL_COUNT_KEY, _levelNumber);

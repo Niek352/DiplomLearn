@@ -62,7 +62,7 @@ namespace _Scripts.Ranking
 			foreach (var entry in scores.Results)
 			{
 				var item = Instantiate(_rankingItem, _content);
-				item.SetUp(entry.PlayerName, entry.Score.ToString(CultureInfo.InvariantCulture), entry.Rank.ToString());
+				item.SetUp(entry.PlayerName, entry.Score.ToString(CultureInfo.InvariantCulture), (entry.Rank + 1).ToString());
 				_rankingItems.Add(item);
 			}
 			
