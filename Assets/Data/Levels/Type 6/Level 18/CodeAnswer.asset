@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3043350c223a45f098630bb465c82e8e, type: 3}
+  m_Name: CodeAnswer
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  Answer: 6
+  CodeBlocks:
+  - Language: "\u0411\u0435\u0439\u0441\u0438\u043A"
+    Code: {fileID: 21300000, guid: d5e175a06ab436d4a85d3504c5379454, type: 3}
+  - Language: Python
+    Code: {fileID: 21300000, guid: d1dbcda4fea5430408ff33077f5634d5, type: 3}
+  - Language: "\u041F\u0430\u0441\u043A\u0430\u043B\u044C"
+    Code: {fileID: 21300000, guid: f68b722564b82194e90c363db5c7f32f, type: 3}
+  - Language: "\u0410\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+      \u044F\u0437\u044B\u043A"
+    Code: {fileID: 21300000, guid: b91347d5697a1684eacde8ca55a4390d, type: 3}
+  - Language: "\u0421++"
+    Code: {fileID: 21300000, guid: 04ef392fff07f1841b5f4a17407cf4bf, type: 3}

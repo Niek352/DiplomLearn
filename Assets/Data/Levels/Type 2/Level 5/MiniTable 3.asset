@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd95464c16694a88a3be96283ceefbdc, type: 3}
+  m_Name: MiniTable 3
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Matrix
+      Entry: 7
+      Data: 0|System.String[,], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 40
+    - Name: ranks
+      Entry: 1
+      Data: 4|10
+    - Name: 
+      Entry: 1
+      Data: "\u0410 1 "
+    - Name: 
+      Entry: 1
+      Data: "\u0411 2"
+    - Name: 
+      Entry: 1
+      Data: "\u0412 3"
+    - Name: 
+      Entry: 1
+      Data: "\u0413 4"
+    - Name: 
+      Entry: 1
+      Data: "\u0414 5"
+    - Name: 
+      Entry: 1
+      Data: " \u0415 6"
+    - Name: 
+      Entry: 1
+      Data: "\u0401 7"
+    - Name: 
+      Entry: 1
+      Data: "\u0416 8"
+    - Name: 
+      Entry: 1
+      Data: "\u0417 9"
+    - Name: 
+      Entry: 1
+      Data: "\u0418 10"
+    - Name: 
+      Entry: 1
+      Data: "\u0419 11"
+    - Name: 
+      Entry: 1
+      Data: "\u041A 12"
+    - Name: 
+      Entry: 1
+      Data: "\u041B 13"
+    - Name: 
+      Entry: 1
+      Data: "\u041C 14"
+    - Name: 
+      Entry: 1
+      Data: "\u041D 15"
+    - Name: 
+      Entry: 1
+      Data: "\u041E 16"
+    - Name: 
+      Entry: 1
+      Data: "\u041F 17"
+    - Name: 
+      Entry: 1
+      Data: "\u0420 18"
+    - Name: 
+      Entry: 1
+      Data: "\u0421 19"
+    - Name: 
+      Entry: 1
+      Data: "\u0422 20"
+    - Name: 
+      Entry: 1
+      Data: "\u0423 21"
+    - Name: 
+      Entry: 1
+      Data: "\u0424 22"
+    - Name: 
+      Entry: 1
+      Data: "\u0425 23"
+    - Name: 
+      Entry: 1
+      Data: "\u0426 24"
+    - Name: 
+      Entry: 1
+      Data: "\u0427 25"
+    - Name: 
+      Entry: 1
+      Data: "\u0428 26"
+    - Name: 
+      Entry: 1
+      Data: "\u0429 27"
+    - Name: 
+      Entry: 1
+      Data: "\u042A 28"
+    - Name: 
+      Entry: 1
+      Data: "\u042B 29"
+    - Name: 
+      Entry: 1
+      Data: "\u042C 30"
+    - Name: 
+      Entry: 1
+      Data: "\u042D 31"
+    - Name: 
+      Entry: 1
+      Data: "\u042E 32"
+    - Name: 
+      Entry: 1
+      Data: "\u042F 33"
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Answer: "\u0412\u0415\u0414\u0418"

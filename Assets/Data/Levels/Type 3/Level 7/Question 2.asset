@@ -22,4 +22,4 @@ MonoBehaviour:
     (X < 2) \u0418 (X < 5)."
   Ico: []
   Answer: {fileID: 11400000, guid: f3cfc42ef62098843a5ecd3bb9c45985, type: 2}
-  AnswerType: InputAnswer
+  AnswerType: AnswerVariants

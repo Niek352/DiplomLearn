@@ -20,4 +20,4 @@ MonoBehaviour:
     > 7) \u0418\u041B\u0418 \u041D\u0415 (X > 6)."
   Ico: []
   Answer: {fileID: 11400000, guid: 1e5b614e4fb595044bc226e98dcd88eb, type: 2}
-  AnswerType: InputAnswer
+  AnswerType: AnswerVariants
